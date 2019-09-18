@@ -1,0 +1,65 @@
+$page-margin-mobile: 20px;
+
+.main {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+.body {
+	flex-grow: 1;
+}
+
+/**
+ * MIXINS
+ */
+
+ @mixin container {
+  width: 100%;
+  padding-left: 60px;
+  padding-right: 60px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+
+ 	@include from(large) {
+    max-width: 1440px;
+ 	}
+
+ 	.grid & {
+ 		position: relative;
+
+ 		&::before {
+ 			content: '';
+ 			display: block;
+ 			position: absolute;
+ 			pointer-events: none;
+ 			top: 0;
+ 			bottom: 0;
+ 			left: 0;
+ 			width: $page-margin-mobile;
+ 			// background-color: rgba($color-blue, .2);
+
+ 			@include from(medium) {
+				width: 80px;
+ 			}
+ 		}
+
+ 		&::after {
+ 			content: '';
+ 			display: block;
+ 			position: absolute;
+ 			pointer-events: none;
+ 			top: 0;
+ 			bottom: 0;
+ 			right: 0;
+ 			width: $page-margin-mobile;
+ 			// background-color: rgba($color-blue, .2);
+
+ 			@include from(medium) {
+				width: 80px;
+ 			}
+ 		}
+ 	}
+ }

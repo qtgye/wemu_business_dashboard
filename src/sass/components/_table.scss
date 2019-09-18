@@ -1,0 +1,67 @@
+.table { 
+   border-radius: 6px;
+   background-color: $color-white;
+   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0);
+   padding: 20px 20px 110px;
+
+  &__heading {
+    @include font-primary;
+    @include type((
+      font-size: 14px,
+      line-height: 18px,
+    ));
+    margin-bottom: 40px;
+  }
+
+  &__table {
+   table-layout: auto;
+   width: 100%;
+   border-collapse: collapse;
+  }
+
+  &__columnheader {
+    @include font-primary-medium;
+    @include type((
+      font-size: 14px,
+      line-height: 18px,
+    ));
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid rgba($color-gray-1, .15);
+
+    &[data-sortable] {
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        width: 10px;
+        height: 1em;
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url("/images/down-chevron.svg");
+        background-position: center;
+        background-size: contain;
+        margin-left: 5px;
+      }
+    }
+    &[data-ascending]::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__row {
+    &:nth-child(even) {
+      background-color: $color-gray-2;
+    }
+  }
+
+  &__cell {
+    @include font-primary;
+    @include type((
+      font-size: 14px,
+      line-height: 18px,
+    ));
+    padding: 10px;
+    color: $color-dark-gray-1;
+  }
+}

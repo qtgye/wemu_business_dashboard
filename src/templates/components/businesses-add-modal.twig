@@ -1,0 +1,78 @@
+{% extends '@templates/components/modal.twig' %}
+
+{% set categories = {
+  shop: 'Shop',
+  studio: 'Studio',
+  service: 'Service',
+  cafe: 'Cafe',
+} %}
+{% set modal_classes = 'businesses-add-modal' %}
+{% block modal_content %}
+	<div class="businesses-add-modal__content">
+
+    <h4 class="modal__heading">Add Business</h4>
+
+    <div class="input-group-2up">
+      {# Business Name #}
+      <div class="input-block input-block--name">
+        <label for="name">Business Name</label>
+        <input type="text" name="name" id="name">
+      </div>
+
+      {# Category #}
+      <div class="input-block">
+        <label for="category">Category</label>
+        {% include '@templates/components/custom-select.twig' with {
+          options: categories,
+          name: 'category',
+          selected: 'shop',
+        } only %}
+      </div>
+    </div>
+
+    <div class="input-group-2up">
+      {# Contact Name #}
+      <div class="input-block input-block--name">
+        <label for="contact">Contact Name</label>
+        <input type="text" name="contact" id="contact">
+      </div>
+    </div>
+
+
+    <div class="input-group-2up">
+      {# Email #}
+      <div class="input-block input-block--name">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+      </div>
+
+      {# Mobile Number #}
+      <div class="input-block input-block--name">
+        <label for="mobile">Mobile Number</label>
+        <input type="text" name="mobile" id="mobile">
+      </div>
+    </div>
+
+
+    <div class="input-group-2up">
+      {# Password #}
+      <div class="input-block input-block--name">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+      </div>
+
+      {# Confirm Password #}
+      <div class="input-block input-block--name">
+        <label for="confirm-password">Re-password</label>
+        <input type="password" name="confirm-password" id="confirm-password">
+      </div>
+    </div>
+
+		<div class="businesses-add-modal__controls">
+			<button class="button button--white modal__dismiss" type="button">Cancel</button>
+			<button class="button button--green businesses-add-modal__add" type="submit">Add</button>
+		</div>
+
+	</div>
+{% endblock %}
+

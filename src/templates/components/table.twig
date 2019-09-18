@@ -1,0 +1,32 @@
+<div class="table">
+  {% if title %} 
+    <h4 class="table__heading">{{ title }}</h4>
+  {% endif %}
+  <table class="table__table">
+    {% if title %}
+      <caption>
+      </caption>
+    {% endif %}
+    <thead>
+      <tr class="table__columnheaders">
+       {% for heading in headings %}
+          <th
+            scope="col"
+            {% if heading.sortable %}data-sortable="true"{% endif %}
+            data-prop="{{ heading.name }}"
+            data-title="{{ heading.title }}"
+            class="table__columnheader">{{ heading.title }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      {% for row in rows %}
+        <tr class="table__row">
+          {% for key, data in row %}
+            <td class="table__cell" data-prop="{{ key }}" data-value="{{ data }}">{{ data }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

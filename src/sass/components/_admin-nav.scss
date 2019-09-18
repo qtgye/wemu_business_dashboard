@@ -1,0 +1,43 @@
+.admin-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-shrink: 0;
+	height: 80px;
+	border-right: 1px solid rgba($color-gray-1, .11);
+  background-color: $color-white;
+
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 40px;   
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	}
+
+	&__item {
+		opacity: .2;
+
+		&:not(:first-child) {
+			margin-left: 100px;
+		}
+
+		&--active {
+			opacity: 1;
+		}
+	}
+
+	&__icon {
+		height: 20px;
+	}
+
+}

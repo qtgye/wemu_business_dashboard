@@ -1,0 +1,91 @@
+{% extends '@templates/layouts/admin.twig' %}
+
+{% block title %}Customers{% endblock %}
+{% block body_class %}page--businesses{% endblock %}
+
+{# Should be picked up by the parent template #}
+{% set active_nav_name = 'businesses' %}
+
+{% block admin_contents %}
+  {# Mock table data #}
+  {% set table = {
+    headings: [
+      {
+        name: 'name',
+        title: 'Name',
+      },
+      {
+        name: 'date_created',
+        title: 'Created',
+        sortable: true,
+      },
+      {
+        name: 'contact',
+        title: 'Contact'
+      },
+      {
+        name: 'email',
+        title: 'Email',
+      },
+      {
+        name: 'last_login',
+        title: 'Last Login',
+      },
+      {
+        name: 'category',
+        title: 'Category'
+      },
+      {
+        name: 'total_sales',
+        title: 'Total Sales',
+      }
+    ],
+    rows: [
+      {
+        name: 'Business Name One',
+        date_created: 'Mar 15, 2019',
+        contact: 'John Doe',
+        email: 'johndoe@gmail.com',
+        category: 'Shop',
+        last_login: '3 hours ago',
+        total_spent: '$10,000',
+      },
+      {
+        name: 'XYZ Incorporated',
+        date_created: 'Mar 14, 2019',
+        contact: 'John Doe',
+        email: 'johndoe+2@gmail.com',
+        category: 'Studio',
+        last_login: '5 hours ago',
+        total_spent: '$12,000',
+      },
+      {
+        name: 'ABC Company',
+        date_created: 'Mar 12, 2019',
+        contact: 'John Doe',
+        email: 'johndoe+3@gmail.com',
+        category: 'Service',
+        last_login: '10 hours ago',
+        total_spent: '$5,000',
+      },
+      {
+        name: 'Company 123',
+        date_created: 'Mar 10, 2019',
+        contact: 'John Doe',
+        email: 'johndoe+4@gmail.com',
+        category: 'Cafe',
+        last_login: 'Today',
+        total_spent: '$0.0',
+      },
+    ]
+  } %}
+
+  <form class="listing businesses-listing" action="/" method="post">
+		{% include '@templates/components/listing-header.twig' with { title: 'Businessses', with_add: true } only %}
+    {% include '@templates/components/table.twig' with table only %}
+
+    {# Add modal #}
+    {% include '@templates/components/businesses-add-modal.twig' %}
+
+	</form>
+{% endblock %} {# Ends admin_contents block #}

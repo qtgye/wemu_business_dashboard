@@ -1,0 +1,61 @@
+button,
+.button {
+	@include font-primary;
+	@include type((
+		font-size: 16px,
+		line-height: 19px
+	));
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	min-width: 100px;
+	min-height: 36px;
+	cursor: pointer;
+	background-color: transparent;
+	-webkit-appearance: none;
+	border: 0;
+	transition: background-color .3s;
+
+  &[disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: .2;
+  }
+}
+
+.button--text {
+	border-color: transparent;
+}
+
+.button--outline {
+	background-color: transparent;
+}
+
+
+/* COLOR VARIATIONS */
+
+.button--cyan {
+	color: $color-white;
+	background-color: $color-cyan-2;
+	box-shadow: 0 1px 2px 0 rgba(16, 22, 26, 0.2), 0 0 0 1px #1F6B9A, inset 0 0 0 1px rgba(16, 22, 26, 0.4), inset 0 -1px 1px 0 rgba(16, 22, 26, 0.2);
+}
+
+.button--white {
+	color: $color-dark-gray-1;
+	background-color: $color-gray-2;
+	box-shadow: 0 1px 2px 0 rgba(16, 22, 26, 0.1), 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 0 0 1px rgba(16, 22, 26, 0.2), inset 0 -1px 1px 0 rgba(16, 22, 26, 0.1);
+}
+
+.button--green {
+	color: $color-white;
+	background-color: $color-green;
+	box-shadow: 0 1px 2px 0 rgba(16, 22, 26, 0.2), 0 0 0 1px #298844, inset 0 0 0 1px rgba(16, 22, 26, 0.4), inset 0 -1px 1px 0 rgba(16, 22, 26, 0.2);
+}
+
+
+.button--blue {
+	color: $color-white;
+	background-color: $color-blue-1;
+	box-shadow: 0 1px 2px 0 rgba(16, 22, 26, 0.2), 0 0 0 1px #1F6B9A, inset 0 0 0 1px rgba(16, 22, 26, 0.4), inset 0 -1px 1px 0 rgba(16, 22, 26, 0.2);
+}

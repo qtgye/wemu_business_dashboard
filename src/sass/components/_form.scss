@@ -1,0 +1,127 @@
+form {
+	& button,
+	& .button {
+		display: inline-block;
+		padding: 0 15px;
+		min-width: 127px;
+		height: 40px;
+	}
+}
+
+.form-copy {
+	@include font-primary;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 56px;
+}
+
+.form-subcopy {
+	@include font-primary;
+	font-size: 18px;
+	text-align: center;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Should contain 2 input-blocks
+.input-group-2up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 15px;
+  margin-top: 40px;
+
+  .input-block {
+    margin-top: 0 !important;
+  }
+}
+
+.input-block {
+	width: 100%;
+	text-align: left;
+
+  &:not(:first-child) {
+		margin-top: 30px;
+	}
+
+	&--inline {
+		display: inline-flex;
+	}
+
+	label {
+		@include font-primary;
+		@include type((
+			font-size: 14px,
+			line-height: 18px,
+		));
+		display: block;
+		margin-bottom: 4px;
+		color: $color-dark-gray-1;
+	}
+
+	& [type="text"],
+	& [type="email"],
+	& [type="password"] {
+		@include font-primary;
+		@include type((
+			font-size: 16px,
+			line-height: 20px,
+		));
+		display: block;
+		width: 100%;
+		padding: 0 20px;
+		height: 40px;
+		border-radius: 3px;
+		-webkit-appearance: none;
+		box-shadow: inset 0 1px 1px 0 rgba(16, 22, 26, 0.2), inset 0 0 0 1px rgba(16, 22, 26, 0.15);
+		border: 0;
+		padding: 10px;
+	}
+
+	input[type="checkbox"] {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		-webkit-appearance: none;
+		width: 32px;
+		height: 32px;
+		border-radius: 6px;
+		// border: 1px solid $color-light-gray-2;
+		margin-right: 10px;
+		transition: background-color .3s;
+		cursor: pointer;
+
+		&::after {
+			content: '✓';
+			font-size: 30px;
+			// color: $color-white;
+			opacity: 0;
+			transition: opacity .3s;
+		}
+
+		&:checked {
+			// background-color: $color-light-gray-2;
+
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+
+	textarea {
+		@include font-primary;
+		@include type((
+			font-size: 16px,
+			line-height: 20px,
+		));
+		display: block;
+		width: 100%;
+		padding: 0 20px;
+		border-radius: 3px;
+		-webkit-appearance: none;
+		box-shadow: inset 0 1px 1px 0 rgba(16, 22, 26, 0.2), inset 0 0 0 1px rgba(16, 22, 26, 0.15);
+		border: 0;
+		padding: 10px;
+	}
+}

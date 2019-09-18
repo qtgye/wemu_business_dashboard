@@ -1,0 +1,35 @@
+{# DASHBOARD_CARDS #}
+{% set cards = [
+	{
+		title: 'Number of Businesses',
+		value: 75,
+    data_type: 'number'
+	},
+	{
+		title: 'Number of Users',
+		value: '1,000',
+    data_type: 'number'
+	},
+	{
+		title: 'Number of Products',
+		value: '1,000',
+    data_type: 'number',
+	},
+	{
+		title: 'Total Value of Products',
+		value: '$12,322',
+    data_type: 'currency',
+	},
+]%}
+
+<div class="dashboard-cards">
+	{% for card in cards %}
+		<div class="dashboard-cards__card dashboard-cards__card--{{ card.data_type }}">
+			<div class="dashboard-cards__card-header">
+				<h4 class="dashboard-cards__card-title">{{ card.title }}</h4>
+				<img src="{{ card.icon }}" alt="" class="dashboard-cards__card-icon">
+			</div>
+      <p class="dashboard-cards__card-value">{{ card.value }}</p>
+		</div>
+	{% endfor %}
+</div>

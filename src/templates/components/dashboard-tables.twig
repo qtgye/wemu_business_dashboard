@@ -1,0 +1,88 @@
+{% set tables = [
+  {
+    title: 'Top Businesses',
+    headings: [
+      {
+        name: 'name',
+        title: 'Name',
+      },
+      {
+        name: 'total_sold',
+        title: '# Items Sold',
+      },
+      {
+        name: 'total_sales',
+        title: 'Total Sales',
+      }
+    ],
+    rows: [
+      {
+        name: 'Business Name One',
+        total_sold: 20,
+        total_sales: '$10,000',
+      },
+      {
+        name: 'Gilad',
+        total_sold: 50,
+        total_sales: '$5,000',
+      },
+      {
+        name: 'Javier',
+        total_sold: 1,
+        total_sales: '$5,000',
+      },
+      {
+        name: 'Gilad',
+        total_sold: 50,
+        total_sales: '$5,000',
+      },
+    ]
+  },
+  {
+    title: 'Top Items',
+    headings: [
+      {
+        name: 'name',
+        title: 'Name',
+      },
+      {
+        name: 'total_sold',
+        title: '# Sold',
+      },
+      {
+        name: 'total_sales',
+        title: 'Total Sales',
+      }
+    ],
+    rows: [
+      {
+        name: 'Item Name',
+        total_sold: 20,
+        total_sales: '$10,000',
+      },
+      {
+        name: 'Item Name 2',
+        total_sold: 50,
+        total_sales: '$5,000',
+      },
+      {
+        name: 'Item Name 4',
+        total_sold: 1,
+        total_sales: '$5,000',
+      },
+      {
+        name: 'Item Name 100',
+        total_sold: 50,
+        total_sales: '$5,000',
+      },
+    ]
+  }
+] %}
+
+<div class="dashboard-tables">
+  {% for table in tables %}
+    <div class="dashboard-tables__item">
+      {% include '@templates/components/table.twig' with table only %}
+    </div>
+  {% endfor %}
+</div>
