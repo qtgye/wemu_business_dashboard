@@ -8,6 +8,8 @@ browserSync.init({
   server: {
       baseDir: PUBLIC_DIR
   },
+  open: false,
+  ui: false,
   files: path.resolve(PUBLIC_DIR, '**/*.*')
 }, () => {
 	browserSync.initialized = true;
