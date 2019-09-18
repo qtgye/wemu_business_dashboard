@@ -1,7 +1,20 @@
 <div class="table">
-  {% if title %} 
-    <h4 class="table__heading">{{ title }}</h4>
+
+  {% if title %}
+    <div class="table__header">
+      {% if title %}
+        <h4 class="table__heading">{{ title }}</h4>
+      {% endif %}
+      {% if options %}
+        {% include '@templates/components/custom-select.twig' with {
+          options: options,
+          selected: 1,
+          name: 'stop-position'
+        } only %}
+      {% endif %}
+    </div>
   {% endif %}
+
   <table class="table__table">
     {% if title %}
       <caption>

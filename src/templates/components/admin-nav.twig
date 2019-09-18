@@ -1,28 +1,34 @@
 {% set nav_items = [
 	{
 		name: 'home',
-		title: 'Home',
+		title: 'Dashboard',
 		url: '/',
-		icon: '/images/home.svg',
+		icon: '/images/monitor.png',
 	},
 	{
-		name: 'businesses',
-		title: 'Businesses',
-		url: '/businesses.html',
+		name: 'subscription',
+		title: 'Subscription',
+		url: '/subscription.html',
+		icon: '/images/shopping-bag.png',
+	},
+	{
+		name: 'reports',
+		title: 'Reports',
+		url: '/reports.html',
+		icon: '/images/file-text.png',
+	},
+	{
+		name: 'business-settings',
+		title: 'Business Settings',
+		url: '/business-settings.html',
 		icon: '/images/briefcase.svg',
 	},
-	{
-		name: 'customers',
-		title: 'Customers',
-		url: '/customers.html',
-		icon: '/images/users.svg',
-	}
 ] %}
 
 <nav class="admin-nav">
   <div class="admin-nav__container">
     <a href="/">
-      <img class="admin-nav__logo" src="/images/logo.svg" alt=""> 
+      <img class="admin-nav__logo" src="/images/logo.svg" alt="">
     </a>
     <ul class="admin-nav__list">
       {% for item in nav_items %}

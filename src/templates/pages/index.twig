@@ -1,13 +1,13 @@
 {% extends '@templates/layouts/admin.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Dashboard{% endblock %}
 {% block body_class %}page--dashboard{% endblock %}
 
 {# Should be picked up by the parent template #}
 {% set active_nav_name = 'home' %}
 
 {% block admin_contents %}
-	{% include '@templates/components/dashboard-header.twig' %}
+	{% include '@templates/components/dashboard-header.twig' with { title: 'Dashboard' } only %}
 	{% include '@templates/components/dashboard-cards.twig' %}
   {% include '@templates/components/dashboard-tables.twig' %}
 {% endblock %} {# Ends admin_contents block #}
