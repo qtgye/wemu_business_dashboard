@@ -1,0 +1,155 @@
+.dashboard-donut-chart {
+	margin-top: 25px;
+
+	&__loader {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 5;
+		background-color: rgba($color-white, .8);
+		visibility: visible;
+		opacity: 1;
+		transition: visibility .3s, opacity .3s;
+
+		.dashboard-donut-chart:not(.dashboard-donut-chart--loading) & {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	&__legend {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		bottom: 30px;
+		left: 0;
+		width: 100%;
+
+		&-item {
+			display: inline-flex;
+			align-items: center;
+			font-size: 14px;
+			font-size: Helvetica;
+
+			&:not(:first-child) {
+				margin-left: 30px;
+			}
+
+			&::before {
+				content: '';
+				display: inline-block;
+				width: 30px;
+				height: 6px;
+				margin-right: 2px;
+				margin-right: 5px;
+				border-radius: 3px;
+			}
+
+			&--positive::before {
+				background-color: $color-green;
+			}
+
+			&--negative::before {
+				background-color: $color-red;
+			}
+		}
+	}
+
+	&__tooltip {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		font-family: Helvetica;
+		font-size: 40px;
+		color: $color-gray-3;
+		box-sizing: border-box;
+		font-weight: bolder;
+	}
+
+	// Highcharts overrides
+	.dashboard-donut-chart .highcharts-point {
+		display: block;
+	}
+
+	.highcharts-data-label {
+		display: none;
+	}
+
+	.highcharts-data-label-connector {
+		display: none;
+	}
+
+	.highcharts-root .highcharts-tooltip {
+		display: none;
+	}
+
+	.highcharts-tooltip {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		filter: none;
+
+		span {
+			top: 0 !important;
+			left: 0 !important;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	// Background pie
+	.highcharts-series-0 {
+		.highcharts-point {
+			fill: #E8E8E8;
+		}
+	}
+
+	.highcharts-halo {
+		display: none;
+	}
+
+	// Actual pie
+	.highcharts-series-1,
+	.highcharts-series-2 {
+		& .highcharts-point,
+		& .highcharts-point-hover {
+			stroke-width: 0;
+			fill-opacity: 1;
+
+			// Negative point
+			&.highcharts-color-0 {
+				fill: $color-red;
+			}
+
+			// Positive point
+			&.highcharts-color-1 {
+				fill: $color-green;
+			}
+
+			// Empty point
+			&.highcharts-color-2 {
+				display: none;
+			}
+		}
+	}
+
+	.highcharts-series-2 {
+		& .highcharts-point,
+		& .highcharts-point-hover {
+			opacity: 0;
+			box-shadow: 3px 0 18px 0 rgba(72, 128, 255, 0.4);
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+}

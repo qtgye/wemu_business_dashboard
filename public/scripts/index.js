@@ -1,5 +1,6 @@
 import CustomSelect from './custom-select.js';
 import DashboardLineChart from './dashboard-line-chart.js';
+import DashboardDonutChart from './dashboard-donut-chart.js';
 // import TripStops from './trip-stops.js';
 // import PlacesList from './places-list.js';
 // import Table from './table.js';
@@ -13,6 +14,7 @@ if ( 'ontouchstart' in document ) {
 
 CustomSelect.init();
 DashboardLineChart.init();
+DashboardDonutChart.init();
 // TripStops.init();
 // PlacesList.init();
 // Table.init();
