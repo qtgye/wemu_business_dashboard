@@ -1,0 +1,118 @@
+.dashboard-line-chart {
+	margin-top: 25px;
+
+	&__loader {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 5;
+		background-color: rgba($color-white, .8);
+		visibility: visible;
+		opacity: 1;
+		transition: visibility .3s, opacity .3s;
+
+		.dashboard-line-chart:not(.dashboard-line-chart--loading) & {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	&__tooltip {
+		font-family: Helvetica;
+		font-size: 12px;
+		margin-top: -20px;
+		margin-left: -30px;
+		padding: 12px 30px;
+		border-radius: 12px;
+		background-color: white;
+		border: 1px solid rgba($color-blue-1, .5);
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+		color: $color-gray-3;
+	}
+
+	// Highcharts overrides
+	stop[offset="0"] {
+		stop-color: $color-blue-1;
+		stop-opacity: .2;
+	}
+
+	stop[offset="1"] {
+		stop-color: $color-blue-1;
+		stop-opacity: 0;
+	}
+
+	.highcharts-area {
+		fill: url('#line-chart-gradient');
+	}
+
+	.highcharts-graph {
+		stroke-width: 1px;
+		stroke: rgba($color-blue-1, .5);
+	}
+
+	.highcharts-container {
+		overflow: visible;
+	}
+
+	.highcharts-plot-background {
+		fill: $color-gray-2;
+	}
+
+	.highcharts-axis-line {
+		display: none;
+	}
+
+	.highcharts-xaxis-grid .highcharts-grid-line {
+		stroke-width: 15px;
+		stroke: $color-white;
+	}
+
+	.highcharts-yaxis-grid .highcharts-grid-line {
+		display: none;
+	}
+
+	.highcharts-xaxis-labels {
+		margin-top: 10px;
+		font-family: Helvetica;
+		font-size: 8.13px;
+		color: $color-gray-3;
+	}
+
+	.highcharts-yaxis-labels {
+		font-family: Helvetica;
+		font-size: 8.13px;
+		color: $color-gray-3;
+	}
+
+	.highcharts-point {
+		display: none;
+	}
+
+	.highcharts-root .highcharts-tooltip {
+		display: none;
+	}
+
+	.highcharts-tooltip-0 {
+		filter: none;
+	}
+
+	.highcharts-point-hover {
+		fill: white;
+		stroke: rgba($color-blue-1, .5);
+	}
+
+	.highcharts-halo {
+		fill: white;
+		stroke: rgba($color-blue-1, .5);
+		stroke-width: 1px;
+		fill-opacity: 1;
+	}
+
+	.highcharts-tick {
+		display: none;
+	}
+}

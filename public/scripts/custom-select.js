@@ -105,6 +105,8 @@ class CustomSelect extends Component {
 		}
 
 		// Should emit event passing dataset.value
+		const selectEvent = new CustomEvent('select', { detail: this.value });
+		this.element.dispatchEvent(selectEvent);
 	}
 
 	selectByValue(value) {

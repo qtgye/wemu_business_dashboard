@@ -1,10 +1,22 @@
+{% set options = {
+		'1': 'Today',
+		'7': '7 Days',
+		'30': '30 Days',
+} %}
+
 <div class="dashboard-charts">
 	<div class="dashboard-charts__item dashboard-charts__item--wide">
 		<div class="dashboard-charts__header">
 			<h3 class="dashboard-charts__heading">Sales Statistics</h3>
+			<div class="dashboard-charts__controls">
+				{% include '@templates/components/custom-select.twig' with {
+					options: options,
+					selected: '1',
+				} only %}
+			</div>
 		</div>
 		<div class="dashboard-charts__chart">
-			{# Chart here #}
+			{% include '@templates/components/dashboard-line-chart.twig' %}
 		</div>
 	</div>
 	<div class="dashboard-charts__item dashboard-charts__item--narrow">
