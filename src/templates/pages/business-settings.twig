@@ -1,0 +1,12 @@
+{% extends '@templates/layouts/admin.twig' %}
+
+{% block title %}Business Settings{% endblock %}
+{% block body_class %}page--business-settings{% endblock %}
+
+{# Should be picked up by the parent template #}
+{% set active_nav_name = 'business-settings' %}
+
+{% block admin_contents %}
+	{% include '@templates/components/business-settings-header.twig' with { title: 'Business Settings' } only %}
+	{% include '@templates/components/business-settings-form.twig' %}
+{% endblock %} {# Ends admin_contents block #}

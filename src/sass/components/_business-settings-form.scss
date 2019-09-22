@@ -1,0 +1,22 @@
+.business-settings-form {
+	margin-top: 30px;
+
+	&__section {
+		background-color: $color-white;
+		border-radius: 6px;
+		padding: 18px 18px 30px;
+
+		&--upload {
+			width: 300px;
+		}
+	}
+
+	&__title {
+		@include font-primary;
+		@include type((
+			font-size: 14px,
+			line-height: 18px,
+		));
+		color: $color-dark-gray-1;
+	}
+}
