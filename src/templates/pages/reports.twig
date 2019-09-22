@@ -1,0 +1,16 @@
+{% extends '@templates/layouts/admin.twig' %}
+
+{% block title %}Reports{% endblock %}
+{% block body_class %}page--reports{% endblock %}
+
+{# Should be picked up by the parent template #}
+{% set active_nav_name = 'reports' %}
+
+{% block admin_contents %}
+	{% include '@templates/components/reports-header.twig' with { title: 'Reports' } only %}
+	{% include '@templates/components/reports-metrics.twig' %}
+	{% include '@templates/components/reports-lists.twig' %}
+	{# {% include '@templates/components/dashboard-cards.twig' %}
+	{% include '@templates/components/dashboard-charts.twig' %}
+  {% include '@templates/components/dashboard-tables.twig' %} #}
+{% endblock %} {# Ends admin_contents block #}

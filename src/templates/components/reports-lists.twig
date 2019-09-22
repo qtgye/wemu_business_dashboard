@@ -1,0 +1,105 @@
+{% set lists = [
+	{
+		title: 'Sales',
+		links: [
+			{
+				title: 'Daily Sales',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Weekly Sales',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Monthly Sales',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Sales by Channel',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Sales by Age Group',
+				url: '/report-detail.html',
+			},
+		]
+	},
+	{
+		title: 'Products',
+		links: [
+			{
+				title: 'Product Sales Report',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Products on Hand',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Low Stock',
+				url: '/report-detail.html',
+			},
+		]
+	},
+	{
+		title: 'Services',
+		links: [
+			{
+				title: 'Service Sales Report',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Service Performance',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Busiest Hours',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Busiest Days',
+				url: '/report-detail.html',
+			},
+		]
+	},
+	{
+		title: 'Customers',
+		links: [
+			{
+				title: 'Loyal Customers',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Top Customers by Sales',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'One-Time Customers',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Returning Customers',
+				url: '/report-detail.html',
+			},
+			{
+				title: 'Top Customers by Orders',
+				url: '/report-detail.html',
+			},
+		]
+	},
+]%}
+
+<ul class="reports-lists">
+	{% for list in lists %}
+		<li class="reports-lists__card">
+			<p class="reports-lists__title">{{ list.title }}</p>
+			<ul class="reports-lists__links">
+				{% for link in list.links %}
+					<li class="reports-lists__links-item">
+						<a href="{{ link.url }}" class="reports-lists__link">{{ link.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</li>
+	{% endfor %}
+</ul>

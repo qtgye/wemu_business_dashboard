@@ -1,0 +1,43 @@
+{% set metrics = [
+	{
+		title: 'Total Sales',
+		value: 75,
+		color: 'blue',
+	},
+	{
+		title: 'Gross Sales',
+		value: '1,000',
+		color: 'blue',
+	},
+	{
+		title: 'Total Customers',
+		value: '1,000',
+		color: 'blue',
+	},
+	{
+		title: 'Returning Customers',
+		value: '1,023',
+		color: 'blue',
+	},
+	{
+		title: 'Available Products',
+		value: '1,000',
+		color: 'blue',
+	},
+	{
+		title: 'Total Stock Value',
+		value: '$12,322',
+		color: 'green',
+	},
+] %}
+
+<div class="reports-metrics">
+	<ul class="reports-metrics__list">
+		{% for item in metrics %}
+			<li class="reports-metrics__item reports-metrics__item--{{ item.color }}">
+				<p class="reports-metrics__label">{{ item.title }}</p>
+				<p class="reports-metrics__value">{{ item.value }}</p>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

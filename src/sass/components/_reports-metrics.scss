@@ -1,0 +1,38 @@
+.reports-metrics {
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		background-color: $color-white;
+		border-radius: 6px;
+		padding: 20px 24px;
+		margin-top: 30px;
+	}
+
+	&__label {
+		@include font-primary;
+		@include type((
+			font-size: 14px,
+			line-height: 18px,
+		));
+		color: $color-dark-gray-1;
+	}
+
+	&__value {
+		@include font-primary;
+		@include type((
+			font-size: 32px,
+			line-height: 38px,
+			letter-spacing: -.93px,
+		));
+		margin-top: 17px;
+
+		.reports-metrics__item--blue & {
+			color: $color-blue-1;
+		}
+
+		.reports-metrics__item--green & {
+			color: $color-green;
+		}
+	}
+}
