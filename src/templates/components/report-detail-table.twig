@@ -1,0 +1,24 @@
+{% set table = {
+	headings: [
+		{ name: 'time', title: 'Time' },
+		{ name: 'customer', title: 'Customer' },
+		{ name: 'item', title: 'Item' },
+		{ name: 'quantity', title: 'Quantity' },
+		{ name: 'total', title: 'Total Sales' },
+	],
+	rows: [
+		{ name: 'Item Name', customer: '$10,000', item: 'White Shirt', quantity: 10, total: '$150' },
+		{ name: 'Item Name 2', customer: '$5,000', item: 'White Shirt', quantity: 10, total: '$150' },
+		{ name: 'Item Name 4', customer: '$5,000', item: 'White Shirt', quantity: 10, total: '$150' },
+		{ name: 'Item Name 100', customer: '$5,000', item: 'White Shirt', quantity: 10, total: '$150' },
+	]
+} %}
+
+<div class="report-detail-table">
+	<header class="report-detail-table__header">
+		<button class="button button--white">Today, Sep 10, 2019</button>
+		<a href="data:text/csv,Test" download="Daily Sales" class="button button--white report-detail-table__csv-link">Export to CSV</a>
+	</header>
+
+	{% include '@templates/components/table.twig' with table only %}
+</div>

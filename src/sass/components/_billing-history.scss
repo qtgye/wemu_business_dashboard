@@ -1,0 +1,27 @@
+.billing-history {
+	.table {
+		padding: 0;
+	}
+
+	.table__cell[data-prop="paid"][data-value="1"] {
+		font-size: 0;
+
+		&::after {
+			@include font-primary;
+			@include type((
+				font-size: 12px,
+				letter-spacing: .3px,
+				line-height: 14px,
+			));
+			display: inline-flex;
+			content: 'Paid';
+			width: 63px;
+			height: 24px;
+			justify-content: center;
+			align-items: center;
+			border-radius: 4px;
+			color: $color-green;
+			border: 1px solid $color-green;
+		}
+	}
+}

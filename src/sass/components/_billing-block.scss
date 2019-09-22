@@ -1,0 +1,21 @@
+.billing-block {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 25px;
+
+	&__card {
+		width: calc((100% - 30px) / 2);
+		background-color: $color-white;
+		border-radius: 6px;
+		padding: 18px 18px 70px;
+	}
+
+	&__card-title {
+		@include font-primary;
+		@include type((
+			font-size: 14px,
+			line-height: 18px,
+		));
+		margin-bottom: 30px;
+	}
+}

@@ -1,0 +1,21 @@
+.billing-footer {
+	@include font-primary-medium;
+	@include type((
+		font-size: 12px,
+		line-height: 14px,
+		letter-spacing: .3px,
+	));
+	width: calc((100% - 26px) / 2);
+	margin-top: 55px;
+
+	p {
+		opacity: .5;
+		margin-bottom: 30px;
+	}
+
+	a:link,
+	a:active,
+	a:visited {
+		color: $color-red;
+	}
+}

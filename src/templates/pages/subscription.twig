@@ -1,0 +1,14 @@
+{% extends '@templates/layouts/admin.twig' %}
+
+{% block title %}Subscription{% endblock %}
+{% block body_class %}page--subscription{% endblock %}
+
+{# Should be picked up by the parent template #}
+{% set active_nav_name = 'subscription' %}
+
+{% block admin_contents %}
+	{% include '@templates/components/subscription-header.twig' with { title: 'Subscription' } only %}
+	{% include '@templates/components/subscription-plans.twig' %}
+	{% include '@templates/components/billing-block.twig' %}
+	{% include '@templates/components/billing-footer.twig' %}
+{% endblock %} {# Ends admin_contents block #}

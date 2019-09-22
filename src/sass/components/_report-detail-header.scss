@@ -1,0 +1,25 @@
+.report-detail-header {
+	&__breadcrumbs {
+		display: flex;
+		align-items: baseline;
+	}
+
+	&__breadcrumb--link {
+		&:link, &:active, &:visited {
+			color: $color-blue-1;
+		}
+	}
+
+	&__separator {
+		display: inline-block;
+		width: 10px;
+		height: .8ex;
+		background-image: url(/images/chevron-right.png);
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		margin: 5px 20px;
+	}
+
+
+}

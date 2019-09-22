@@ -1,0 +1,31 @@
+<form class="billing-form">
+
+	{# Full Name #}
+	<div class="billing-form__input-group">
+		<div class="input-block">
+			<label for="name">Full Name</label>
+			<input type="text" name="name" id="name" placeholder="Placeholder">
+		</div>
+	</div>
+
+	{# Credit Card No. and CCV #}
+	<div class="billing-form__input-group">
+		<div class="input-block">
+			<label for="card_number">Card Number</label>
+			<input type="text" name="card_number" id="card_number" placeholder="Placeholder">
+		</div>
+		<div class="input-block">
+			<label for="ccv">CCV</label>
+			<input type="text" name="ccv" id="ccv" placeholder="Placeholder">
+		</div>
+	</div>
+
+	{# Credit Card Expiration #}
+	<div class="input-block billing-form__expiration">
+		<label for="card_number">Expiration Date</label>
+		<div class="billing-form__expiration-inputs">
+			<input class="billing-form__expiration-input" type="text" name="card_expiration_month" id="card_expiration_month" placeholder="Month">
+			<input class="billing-form__expiration-input" type="text" name="card_expiration_year" id="card_expiration_year" placeholder="Year">
+		</div>
+	</div>
+</form>

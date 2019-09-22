@@ -1,0 +1,21 @@
+.report-detail-table {
+	margin-top: 50px;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+
+		.button {
+			@include type((
+				font-size: 14px,
+				line-height: 18px,
+			));
+			padding: 12px 30px;
+		}
+	}
+
+	.table {
+		margin-top: 40px;
+		padding-bottom: 40px;
+	}
+}

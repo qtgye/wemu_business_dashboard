@@ -1,0 +1,12 @@
+{% extends '@templates/layouts/admin.twig' %}
+
+{% block title %}Daily Sales{% endblock %}
+{% block body_class %}page--report-detail{% endblock %}
+
+{# Should be picked up by the parent template #}
+{% set active_nav_name = 'reports' %}
+
+{% block admin_contents %}
+	{% include '@templates/components/report-detail-header.twig' with { title: 'Daily Sales' } only %}
+	{% include '@templates/components/report-detail-table.twig' %}
+{% endblock %} {# Ends admin_contents block #}

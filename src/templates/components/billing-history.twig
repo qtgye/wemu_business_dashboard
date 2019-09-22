@@ -1,0 +1,17 @@
+{% set table = {
+	headings: [
+		{ name: 'date', title: 'Date' },
+		{ name: 'total', title: 'Total' },
+		{ name: 'paid', title: '' }
+	],
+	rows: [
+		{ date: 'Sep 9, 2019', total: '$29', paid: true },
+		{ date: 'Aug 9, 2019', total: '$29', paid: true },
+		{ date: 'Jul 9, 2019', total: '$29', paid: true },
+		{ date: 'Jun 9, 2019', total: '$29', paid: true },
+	]
+} %}
+
+<div class="billing-history">
+	{% include '@templates/components/table.twig' with table only %}
+</div>

@@ -1,0 +1,25 @@
+{% set breadcrumbs = [
+	{
+		title: 'Reports',
+		url: '/reports.html',
+	},
+	{
+		title: 'Daily Sales',
+	},
+] %}
+<div class="report-detail-header">
+	<div class="report-detail-header__breadcrumbs admin__heading">
+		{% for breadcrumb in breadcrumbs %}
+			{% if breadcrumb.url %}
+				<a href="{{ breadcrumb.url }}" class="report-detail-header__breadcrumb report-detail-header__breadcrumb--link">{{ breadcrumb.title }}</a>
+			{% else %}
+				<span class="report-detail-header__breadcrumb">{{ breadcrumb.title }}</span>
+			{% endif %}
+
+			{# Separator #}
+			{% if not loop.last %}
+				<span class="report-detail-header__separator"></span>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
