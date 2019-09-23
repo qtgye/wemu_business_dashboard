@@ -1,3 +1,9 @@
+// Input icons
+$input_icons: (
+	pin,
+	clock,
+);
+
 form {
 	& button,
 	& .button {
@@ -47,6 +53,38 @@ form {
 
 	&--inline {
 		display: inline-flex;
+	}
+
+	// With input icon variant
+	&--icon {
+		position: relative;
+
+		// Icon
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background-size: 20px 20px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		// Icons variants
+		@each $icon in $input_icons {
+			&[data-icon="#{$icon}"]::before {
+				background-image: url(/images/#{$icon}.svg);
+			}
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+			padding-left: 40px;
+		}
 	}
 
 	label {

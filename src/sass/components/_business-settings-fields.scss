@@ -1,0 +1,39 @@
+.business-settings-fields {
+	&__input-group {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 36px;
+
+		&--even {
+			.input-block {
+				width: 50%;
+			}
+		}
+
+		&--location {
+			.input-block:first-child {
+				flex-grow: 1;
+			}
+
+			.input-block:last-child {
+				width: 175px;
+				flex-shrink: 0;
+				margin-left: 43px;
+				margin-top: 0;
+			}
+		}
+	}
+
+	// Form overrides
+	label {
+		margin-bottom: 17px;
+	}
+
+	input {
+		transition: box-shadow .3s;
+
+		&:focus {
+			box-shadow: 0 7px 64px 0 rgba(0, 0, 0, 0.07);
+		}
+	}
+}
