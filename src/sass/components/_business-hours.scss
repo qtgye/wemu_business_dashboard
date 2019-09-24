@@ -131,6 +131,12 @@
 	~ .business-hours__checklist-contents {
 		opacity: .2;
 		pointer-events: none;
+
+		& .business-hours__time-block---second,
+		& .business-hours__hours-separator,
+		& [data-action] {
+			display: none;
+		}
 	}
 }
 
