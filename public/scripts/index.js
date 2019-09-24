@@ -3,7 +3,7 @@ import DashboardLineChart from './dashboard-line-chart.js';
 import DashboardDonutChart from './dashboard-donut-chart.js';
 import ReportDetailTable from './report-detail-table.js';
 import BusinessSettingsUpload from './business-settings-upload.js';
-
+import AdminNav from './admin-nav.js';
 
 // Determine touch support
 if ( 'ontouchstart' in document ) {
@@ -15,3 +15,4 @@ DashboardLineChart.init();
 DashboardDonutChart.init();
 ReportDetailTable.init();
 BusinessSettingsUpload.init();
+AdminNav.init();
