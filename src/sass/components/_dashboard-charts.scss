@@ -2,7 +2,12 @@ $grid-width: unquote("((100% - 90px) / 4)");
 
 .dashboard-charts {
 	display: flex;
+	flex-wrap: wrap;
 	margin-top: 30px;
+	margin-left: -10px;
+	margin-right: -10px;
+	padding: 0 10px;
+	overflow: auto;
 
 	&__header {
 		display: flex;
@@ -24,12 +29,22 @@ $grid-width: unquote("((100% - 90px) / 4)");
 		border-radius: 6px;
 
 		&--wide {
-			width: calc(3 * #{$grid-width} + 60px);
+			width: 100%;
+
+			@include from(large) {
+				width: calc(3 * #{$grid-width} + 60px);
+			}
 		}
 
 		&--narrow {
-			width: calc(#{$grid-width});
-			margin-left: 30px;
+			width: 100%;
+			margin-top: 15px;
+
+			@include from(large) {
+				width: calc(#{$grid-width});
+				margin-left: 30px;
+				margin-top: 0;
+			}
 		}
 	}
 

@@ -15,8 +15,12 @@
 	&__contents {
     @include container;
 		flex-grow: 1;
-		padding: 45px 50px 100px 50px;
 		overflow: auto;
+		padding: 45px 10px 50px 10px;
+
+		@include from(large) {
+			padding: 45px 50px 100px 50px;
+		}
 	}
 
 	&__heading {

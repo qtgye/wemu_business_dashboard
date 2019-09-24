@@ -1,9 +1,13 @@
 .dashboard-tables {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   grid-auto-rows: 1fr;
   grid-gap: 30px;
   margin-top: 30px;
+
+  @include from(large) {
+  	grid-template-columns: repeat(2, 1fr);
+  }
 
   .table {
   	height: 100%;
