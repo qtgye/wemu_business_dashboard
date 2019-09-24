@@ -1,0 +1,59 @@
+{% set days = {
+	monday: 'Monday',
+	tuesday: 'Tuesday',
+	wednesday: 'Wednesday',
+	thursday: 'Thursday',
+	friday: 'Friday',
+	saturday: 'Saturday',
+	sunday: 'Sunday',
+} %}
+
+{# Programmatically fill times in 12hr format #}
+{% set hours = {} %}
+{% for hour in range(1, 24) %}
+	{% set indicator = hour < 12 or hour == 24 ? 'AM' : 'PM' %}
+	{% set hour_adjusted = hour <= 12 ? hour : hour - 12 %}
+	{% set hour = hour ~ "" %}
+	{% set hours = hours|merge({
+		(hour): hour_adjusted ~ ':00 ' ~ indicator,
+	}) %}
+{% endfor %}
+
+{# template variable for hours dropdown #}
+{% set select_data = {
+	options: hours,
+	selected: 9,
+} %}
+
+<div class="business-hours">
+	<p class="business-hours__title">Buiness Hours</p>
+	<div class="business-hours__checklist">
+		{% for name, title in days %}
+			<div class="business-hours__checklist-item">
+				<input type="checkbox" name="days[{{name}}][enabled]" id="{{name}}_toggle" class="business-hours__day-checkbox" hidden>
+				<label for="{{name}}_toggle" class="business-hours__custom-checkbox"></label>
+				<div class="business-hours__checklist-contents">
+					<span class="business-hours__label">{{ title }}</span>
+					<input type="checkbox" name="days[{{name}}][split_time]" id="{{ name }}_split_time" class="business-hours__split-time" hidden>
+					{# Hours selection #}
+					<div class="business-hours__hours">
+						<div class="business-hours__time-block business-hours__time-block---first">
+							{% include '@templates/components/custom-select.twig' with select_data|merge({ name: 'days['~name~'][hours][first][from]' }) only %}
+							<span>to</span>
+							{% include '@templates/components/custom-select.twig' with select_data|merge({ name: 'days['~name~'][hours][first][to]' }) only %}
+						</div>
+						<span class="business-hours__hours-separator">&amp;</span>
+						<div class="business-hours__time-block business-hours__time-block---second">
+							{% include '@templates/components/custom-select.twig' with select_data|merge({ name: 'days['~name~'][hours][second][from]' }) only %}
+							<span>to</span>
+							{% include '@templates/components/custom-select.twig' with select_data|merge({ name: 'days['~name~'][hours][second][to]' }) only %}
+						</div>
+					</div>
+					{# End Hours selection #}
+					<label for="{{ name }}_split_time" class="business-hours__split-time-action" data-action="add">add split time</label>
+					<label for="{{ name }}_split_time" class="business-hours__split-time-action" data-action="remove">remove split time</label>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
