@@ -1,7 +1,12 @@
 .billing-form {
 	&__input-group {
 		display: flex;
-		justify-content: space-between;
+		flex-wrap: wrap;
+
+		@include from(large) {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+		}
 
 		&:not(:first-child) {
 			margin-top: 30px;
@@ -11,13 +16,23 @@
 			margin-top: 0;
 
 			&:first-child {
-				width: calc((100% - 30px) * (434 / 600));
+				width: 100%;
 				flex-shrink: 0;
+
+				@include from(large) {
+					width: calc((100% - 30px) * (434 / 600));
+				}
 			}
 
 			&:nth-child(2) {
-				width: auto;
-				margin-left: 30px;
+				width: calc((100% - 10px) / 2);
+				margin-top: 30px;
+
+				@include from(large) {
+					width: auto;
+					margin-top: unset;
+					margin-left: 30px;
+				}
 			}
 		}
 	}
@@ -26,7 +41,11 @@
 		display: inline-flex;
 
 		.billing-form__expiration-input {
-			width: 120px;
+			width: calc((100% - 10px) / 2);
+
+			@include from(large) {
+				width: 120px;
+			}
 
 			&:not(:first-child) {
 				margin-left: 12px;

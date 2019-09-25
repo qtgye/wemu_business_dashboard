@@ -1,13 +1,30 @@
 .billing-block {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 	margin-top: 25px;
 
+	@include from(large) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
 	&__card {
-		width: calc((100% - 30px) / 2);
+		width: 100%;
 		background-color: $color-white;
 		border-radius: 6px;
 		padding: 18px 18px 70px;
+
+		&:not(:first-child) {
+			margin-top: 20px;
+
+			@include from(large) {
+				margin-top: 0;
+			}
+		}
+
+		@include from(large) {
+			width: calc((100% - 30px) / 2);
+		}
 	}
 
 	&__card-title {
