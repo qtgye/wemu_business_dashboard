@@ -1,25 +1,38 @@
 .business-settings-fields {
 	&__input-group {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
 		margin-top: 36px;
 
+		@include from(large) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.input-block {
+			width: 100%;
+		}
+
 		&--even {
-			.input-block {
-				width: 50%;
+			@include from(large) {
+				.input-block {
+					width: 50%;
+				}
 			}
 		}
 
 		&--location {
-			.input-block:first-child {
-				flex-grow: 1;
-			}
+			@include from(large) {
+				.input-block:first-child {
+					flex-grow: 1;
+				}
 
-			.input-block:last-child {
-				width: 175px;
-				flex-shrink: 0;
-				margin-left: 43px;
-				margin-top: 0;
+				.input-block:last-child {
+					width: 175px;
+					flex-shrink: 0;
+					margin-left: 43px;
+					margin-top: 0;
+				}
 			}
 		}
 	}

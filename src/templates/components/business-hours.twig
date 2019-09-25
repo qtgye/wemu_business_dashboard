@@ -32,8 +32,8 @@
 			<div class="business-hours__checklist-item">
 				<input type="checkbox" name="days[{{name}}][enabled]" id="{{name}}_toggle" class="business-hours__day-checkbox" hidden>
 				<label for="{{name}}_toggle" class="business-hours__custom-checkbox"></label>
+				<span class="business-hours__label">{{ title }}</span>
 				<div class="business-hours__checklist-contents">
-					<span class="business-hours__label">{{ title }}</span>
 					<input type="checkbox" name="days[{{name}}][split_time]" id="{{ name }}_split_time" class="business-hours__split-time" hidden>
 					{# Hours selection #}
 					<div class="business-hours__hours">
@@ -41,17 +41,17 @@
 							{% include '@templates/components/custom-select.twig' with select_data|merge({ name: 'days['~name~'][hours][first][from]' }) only %}
 							<span>to</span>
 							{% include '@templates/components/custom-select.twig' with select_data|merge({ name: 'days['~name~'][hours][first][to]' }) only %}
+							<label for="{{ name }}_split_time" class="business-hours__split-time-action" data-action="add">add split time</label>
 						</div>
 						<span class="business-hours__hours-separator">&amp;</span>
 						<div class="business-hours__time-block business-hours__time-block---second">
 							{% include '@templates/components/custom-select.twig' with select_data|merge({ name: 'days['~name~'][hours][second][from]' }) only %}
 							<span>to</span>
 							{% include '@templates/components/custom-select.twig' with select_data|merge({ name: 'days['~name~'][hours][second][to]' }) only %}
+							<label for="{{ name }}_split_time" class="business-hours__split-time-action" data-action="remove">remove split time</label>
 						</div>
 					</div>
 					{# End Hours selection #}
-					<label for="{{ name }}_split_time" class="business-hours__split-time-action" data-action="add">add split time</label>
-					<label for="{{ name }}_split_time" class="business-hours__split-time-action" data-action="remove">remove split time</label>
 				</div>
 			</div>
 		{% endfor %}

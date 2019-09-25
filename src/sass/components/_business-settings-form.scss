@@ -1,6 +1,12 @@
 .business-settings-form {
 	display: flex;
+	flex-direction: column;
 	margin-top: 30px;
+
+	@include from(large) {
+		flex-direction: row;
+		align-items: flex-start;
+	}
 
 	&__section {
 		background-color: $color-white;
@@ -8,13 +14,23 @@
 		padding: 18px 18px 30px;
 
 		&--upload {
-			width: 300px;
+			width: 100%;
 			flex-shrink: 0;
+
+			@include from(large) {
+				width: 300px;
+			}
 		}
 
 		&--details {
-			margin-left: 34px;
-			flex-grow: 1;
+			width: 100%;
+			margin-top: 20px;
+
+			@include from(large) {
+				margin-top: 0;
+				margin-left: 34px;
+				flex-grow: 1;
+			}
 		}
 	}
 

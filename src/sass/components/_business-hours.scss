@@ -17,12 +17,23 @@
 		));
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
 		margin-top: 30px;
+
+		@include from(large) {
+			flex-wrap: nowrap;
+		}
 	}
 
 	&__checklist-contents {
 		display: flex;
 		align-items: center;
+		width: 100%;
+		margin-top: 16px;
+
+		@include from(large) {
+			margin-top: 0;
+		}
 	}
 
 	&__custom-checkbox {
@@ -48,8 +59,14 @@
 	}
 
 	&__hours {
-		display: flex;
-		align-items: center;
+		display: inline-flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@include from(large) {
+			flex-direction: row;
+			align-items: center;
+		}
 	}
 
 	&__label {
@@ -71,7 +88,14 @@
 
 	&__hours-separator {
 		@include font-primary-medium;
-		margin: auto 15px;
+		width: 225px;
+		margin: 3px 0;
+		text-align: center;
+
+		@include from(large) {
+			width: auto;
+			margin: auto 15px;
+		}
 	}
 
 	&__split-time-action {
@@ -83,12 +107,9 @@
 
 	// Custom select overrides
 	.custom-select {
-		&:first-child {
-			margin-right: 5px;
-		}
-
-		&:last-child {
+		~ span {
 			margin-left: 5px;
+			margin-right: 5px;
 		}
 	}
 
@@ -128,13 +149,17 @@
 		display: none;
 	}
 
+	~ .business-hours__label {
+		opacity: .2;
+	}
+
 	~ .business-hours__checklist-contents {
 		opacity: .2;
 		pointer-events: none;
 
 		& .business-hours__time-block---second,
 		& .business-hours__hours-separator,
-		& [data-action] {
+		& [data-action="add"][data-action="add"] {
 			display: none;
 		}
 	}
@@ -150,12 +175,12 @@
 			}
 		}
 
-		~ [data-action="add"] {
-			display: block;
+		~ .business-hours__hours [data-action="add"] {
+			display: inline-block;
 		}
 	}
 
-	&:checked ~ [data-action="remove"] {
-		display: block;
+	&:checked ~ .business-hours__hours [data-action="remove"] {
+		display: inline-block;
 	}
 }
