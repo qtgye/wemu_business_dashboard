@@ -24,7 +24,8 @@
 		</div>
 		<div class="input-block input-block--icon" data-icon="clock">
 			<label for="time_zone">Time Zone</label>
-			<input type="text" id="time_zone" name="time_zone">
+			<input type="text" id="time_zone" name="time_zone" list="timezones">
+			{% include '@templates/components/timezones-datalist.twig' %}
 		</div>
 	</div>
 
