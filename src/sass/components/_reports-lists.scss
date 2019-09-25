@@ -1,14 +1,31 @@
 .reports-lists {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 	margin-top: 28px;
+
+	@include from(large) {
+		justify-content: space-between;
+		flex-direction: row;
+	}
 
 	&__card {
 		display: block;
-		width: calc((100% - 102px) / 4);
 		background-color: $color-white;
 		border-radius: 6px;
 		padding: 18px 18px 60px;
+		width: 100%;
+
+		&:not(:first-child) {
+			margin-top: 20px;
+
+			@include from(large) {
+				margin-top: 0;
+			}
+		}
+
+		@include from(large) {
+			width: calc((100% - 102px) / 4);
+		}
 	}
 
 	&__title {

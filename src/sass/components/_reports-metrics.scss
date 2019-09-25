@@ -1,12 +1,42 @@
 .reports-metrics {
+	margin-left: -10px;
+	margin-right: -10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: auto;
+	margin-top: 30px;
 
 	&__list {
 		display: flex;
 		justify-content: space-between;
+
+		@include from(large) {
+			background-color: $color-white;
+			border-radius: 6px;
+			padding: 20px 24px;
+		}
+	}
+
+	&__item {
+		min-width: 260px;
+		flex-shrink: 0;
+		padding: 14px;
 		background-color: $color-white;
 		border-radius: 6px;
-		padding: 20px 24px;
-		margin-top: 30px;
+
+		@include from(large) {
+			padding: 0;
+			border-radius: 0;
+			min-width: 0;
+		}
+
+		&:not(:first-child) {
+			margin-left: 10px;
+
+			@include from(large) {
+				margin-left: unset;
+			}
+		}
 	}
 
 	&__label {
