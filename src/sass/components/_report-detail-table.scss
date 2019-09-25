@@ -1,5 +1,9 @@
 .report-detail-table {
-	margin-top: 50px;
+	margin-top: 20px;
+
+	@include from(large) {
+		margin-top: 50px;
+	}
 
 	&__header {
 		display: flex;
@@ -10,7 +14,11 @@
 				font-size: 14px,
 				line-height: 18px,
 			));
-			padding: 12px 30px;
+			padding: 12px;
+
+			@include from(large) {
+				padding: 12px 30px;
+			}
 		}
 	}
 
