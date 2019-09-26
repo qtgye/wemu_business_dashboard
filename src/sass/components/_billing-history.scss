@@ -24,4 +24,8 @@
 			border: 1px solid $color-green;
 		}
 	}
+
+	[data-prop="total"] {
+		text-align: right;
+	}
 }
