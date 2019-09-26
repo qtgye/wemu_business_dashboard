@@ -1,4 +1,4 @@
-<form class="billing-form">
+<form class="billing-form" data-customer-id="cus_FrP31lcqOIzNUp">
 
 	{# Full Name #}
 	<div class="billing-form__input-group">
@@ -12,7 +12,7 @@
 	<div class="billing-form__input-group">
 		<div class="input-block">
 			<label for="card_number">Card Number</label>
-			<input type="text" name="card_number" id="card_number" placeholder="Placeholder">
+			<input type="text" name="card_number" id="card_number" placeholder="Placeholder" disabled readonly>
 		</div>
 		<div class="input-block">
 			<label for="ccv">CCV</label>
@@ -22,7 +22,7 @@
 
 	{# Credit Card Expiration #}
 	<div class="input-block billing-form__expiration">
-		<label for="card_number">Expiration Date</label>
+		<label for="card_expiration_month">Expiration Date</label>
 		<div class="billing-form__expiration-inputs">
 			<input class="billing-form__expiration-input" type="text" name="card_expiration_month" id="card_expiration_month" placeholder="Month">
 			<input class="billing-form__expiration-input" type="text" name="card_expiration_year" id="card_expiration_year" placeholder="Year">
