@@ -20,6 +20,8 @@
 
 	&__card {
 		display: none;
+		flex-wrap: wrap;
+		justify-content: center;
 		width: 100%;
 		height: 204px;
 		padding: 20px;
@@ -27,15 +29,16 @@
 		border-radius: 4px;
 
 		@include from(large) {
+			display: flex;
 			width: 270px;
 			display: flex;
 			opacity: .2;
 		}
 
 		&--active {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
+			&:first-child {
+				display: flex;
+			}
 
 			@include from(large) {
 				opacity: 1;
