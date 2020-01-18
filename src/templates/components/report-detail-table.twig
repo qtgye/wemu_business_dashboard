@@ -20,5 +20,7 @@
 		<a href="data:text/csv,Test" download="Daily Sales" class="button button--white report-detail-table__csv-link">Export to CSV</a>
 	</header>
 
-	{% include '@templates/components/table.twig' with table only %}
+	<div class="report-detail-table__table">
+		{% include '@templates/components/table.twig' with table only %}
+	</div>
 </div>

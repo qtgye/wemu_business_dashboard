@@ -18,14 +18,16 @@
 ] %}
 
 <div class="subscription-plans">
-	<h3 class="subscription-plans__header">Your Plan</h3>
-	<ul class="subscription-plans__cards">
-		{% for item in subscriptions %}
-			<li class="subscription-plans__card{{ item.active ? ' subscription-plans__card--active' : '' }}">
-				<h4 class="subscription-plans__title">{{ item.title }}</h4>
-				<p class="subscription-plans__description">{{ item.description }}</p>
-				<button class="button button--green subscription-plans__cta">{{ item.cta }}</button>
-			</li>
-		{% endfor %}
-	</ul>
+	<div class="subscription-plans__content">
+		<h3 class="subscription-plans__header">Your Plan</h3>
+		<ul class="subscription-plans__cards">
+			{% for item in subscriptions %}
+				<li class="subscription-plans__card{{ item.active ? ' subscription-plans__card--active' : '' }}">
+					<h4 class="subscription-plans__title">{{ item.title }}</h4>
+					<p class="subscription-plans__description">{{ item.description }}</p>
+					<button class="button button--green subscription-plans__cta">{{ item.cta }}</button>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 </div>

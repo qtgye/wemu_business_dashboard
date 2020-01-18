@@ -98,11 +98,13 @@
 	}
 
 	&__icon {
-		display: none;
+		display: inline-block;
+		height: 20px;
+		margin-right: 15px;
 
 		@include from(large) {
 			display: block;
-			height: 20px;
+			margin-right: unset;
 		}
 	}
 
